@@ -4,7 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '3.1.2'
 
 # Fetch aircraft data from Flightradar24.
-gem 'flight_radar'
+# gem 'flight_radar'
 
 # Airports gives you access to data on airports around the world from your Ruby applications.
 gem 'airports', '~> 1.8.0'
