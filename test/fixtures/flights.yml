@@ -1,9 +1,13 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  start: 2022-08-29 12:32:26
-  duraiton: 2022-08-29 12:32:26
+  arrival_airport: one
+  departure_airport: one
+  start: 2022-08-29 15:33:26
+  duraiton: 2022-08-29 15:33:26
 
 two:
-  start: 2022-08-29 12:32:26
-  duraiton: 2022-08-29 12:32:26
+  arrival_airport: two
+  departure_airport: two
+  start: 2022-08-29 15:33:26
+  duraiton: 2022-08-29 15:33:26
