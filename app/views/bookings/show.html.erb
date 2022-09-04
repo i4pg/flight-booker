@@ -1,0 +1,19 @@
+<div class="container">
+  <h2>Flight Information</h2>
+  <h3>Departure City</h3>
+  <p><%= @flight.departure_airport.city %></p>
+  <h3>Arrival City</h3>
+  <p><%= @flight.arrival_airport.city %></p>
+  <h3>Duration</h3>
+  <p><%= @flight.duration %></p>
+  <h3>Date</h3>
+  <p><%= @flight.date %></p>
+  <br>
+  <h2>Passengers Details</h2>
+  <% @passengers.each do |passenger| %>
+    <h3>Passenger Name</h3>
+    <p><%= passenger.name %></p>
+    <h3>Passenger Email</h3>
+    <p><%= passenger.email %></p>
+    <% end %>
+</div>

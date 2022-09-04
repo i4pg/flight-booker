@@ -1,0 +1,38 @@
+<div class="container">
+  <%= form_with url: flights_index_path, method: :get, class: "row row-cols-lg-auto g-3 align-items-center" do |f| %>
+  
+    <%= f.label :departure_airport %>
+    <%= f.collection_select :departure_airport_id, Airport.order(:city).uniq{ |airport| airport.city }, :id, :city %>
+  
+    <%= f.label :arrival_airport %>
+    <%= f.collection_select :arrival_airport_id, Airport.order(:city).uniq{ |airport| airport.city }, :id, :city %>
+
+    <%= f.label :date %>
+    <%= f.collection_select :date, Flight.order(:date).uniq{ |flight| flight.date}, :date, :date, prompt: true%>
+
+    <%= f.label :passengers %>
+    <%= f.select :passengers, (1..4) %>
+  
+    <div class="col-12">
+      <%= f.submit :search,  class: "btn-primary" %>
+    </div>
+  <% end %>
+  <div>
+    <% unless @search.empty? %>
+      <br><h2>Flights:</h2><br >
+      <%= form_with url: "/bookings/new", method: :get do |f| %>
+    <% @search.each do |flight| %>
+      <div>
+        <h3>Departure city: <%= flight.departure_airport.city %></h3>
+        <h3>arrival city: <%= flight.arrival_airport.city %></h3>
+        <h3>date: <%= flight.date %></h3>
+        <h3>duration: <%= flight.duration %></h3>
+        <%= f.radio_button :flight_id, flight.id %>
+        </div><br > 
+      <% end %>
+        <%= f.hidden_field :passengers, value: params[:passengers] %>
+      <%= f.submit 'next',  class: "btn-primary" %>
+      <% end %>
+      <% end %>
+  </div>
+</div>

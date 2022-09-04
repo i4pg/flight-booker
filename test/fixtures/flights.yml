@@ -3,11 +3,11 @@
 one:
   arrival_airport: one
   departure_airport: one
-  start: 2022-08-29 15:33:26
-  duraiton: 2022-08-29 15:33:26
+  start: 2022-08-30 12:31:56
+  duration: MyString
 
 two:
   arrival_airport: two
   departure_airport: two
-  start: 2022-08-29 15:33:26
-  duraiton: 2022-08-29 15:33:26
+  start: 2022-08-30 12:31:56
+  duration: MyString

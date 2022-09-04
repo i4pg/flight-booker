@@ -7,5 +7,11 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 10.times do
-  Airport.create(iata: Airports.all.sample.iata)
+  sample = Airports.all.sample
+  Airport.create(iata: sample.iata, name: sample.name, city: sample.city, country: sample.country)
+end
+
+100.times do
+  Flight.create(date: Date.today + rand(2..5000), duration: rand(2..20).to_s + ' hours', departure_airport_id: rand(1..10),
+                arrival_airport_id: rand(1..10))
 end

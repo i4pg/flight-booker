@@ -6,6 +6,9 @@ ruby '3.1.2'
 # Fetch aircraft data from Flightradar24.
 # gem 'flight_radar'
 
+# Rails forms made easy
+gem 'simple_form'
+
 # Airports gives you access to data on airports around the world from your Ruby applications.
 gem 'airports', '~> 1.8.0'
 
