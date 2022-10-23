@@ -12,6 +12,9 @@ class BookingsController < ApplicationController
 
     respond_to do |format|
       if @booking.save
+        @booking.passengers.each do |passenger|
+          PassengerMailer.confirmation_email(@booking, passenger).deliver_now!
+        end
         format.html { redirect_to booking_url(@booking) }
       else
         format.html { render :new, status: :unprocessable_entity }
